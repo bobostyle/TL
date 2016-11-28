@@ -15,12 +15,12 @@ import com.main.java.exception.NumberFaultException;
  */
 public enum PockersAttribute {
 	
-	LEOPARD(5, "Leopard"),
-	STRAIGHTFLUSH(4, "StraightFl"), 
-	FLUSH(3, "Flush"), 
-	STRAIGHT(2, "Straight"), 
-	PAIR(1, "Pair"), 
-	OTHER(0, "Other"); 
+	LEOPARD(5, "Leopard"), //豹子
+	STRAIGHTFLUSH(4, "StraightFl"),  //同花顺 
+	FLUSH(3, "Flush"),  //同花
+	STRAIGHT(2, "Straight"),  //顺子 
+	PAIR(1, "Pair"),  //对子
+	OTHER(0, "Other");  //散牌
 	private int index;
 	private String name;
 	/**
@@ -47,10 +47,12 @@ public enum PockersAttribute {
 	public void setIndex(int index) {
 		this.index = index;
 	}
+	
 	private PockersAttribute(int indexValue, String nameValue){
 		index = indexValue;
 		name = nameValue;
 	}
+	
 	public static PockersAttribute getAttribute(List<Pocker> pockers) throws NumberFaultException{
 		OutOfThreeNumbersUtil.handleVaildNumException(pockers);
 		if(isLeopard(pockers)){
@@ -68,6 +70,7 @@ public enum PockersAttribute {
 		if(isPair(pockers)){
 			return PAIR;
 		}
+		
 		return OTHER;
 	}
 	//判断是否是豹子

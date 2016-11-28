@@ -18,7 +18,4 @@ public class OutOfThreeNumbersUtil {
 			throw new NumberFaultException("the number of pockers is falut!");
 		}
 	}
-	
-	private static final int TESTNUMBER = 4;
-	
 }
